@@ -72,7 +72,6 @@ class Coffe(QWidget, main_ui.Ui_Form):
             self.cur.execute('''SELECT * FROM Coffee WHERE ID = ?''', (int(a), ))
             res = self.cur.fetchall()[0]
             q = Dialog({'id': res[0], 'sort_name': res[1], 'degree_roating': res[2], 'ground': res[3], 'description': res[4], 'price': str(res[5]), 'volume': str(res[6])})
-            q.exec()
         else:
             q = Dialog({})
         q.exec()
